@@ -64,7 +64,7 @@ class Snake:
 
 
    def move(self):
-       # Her segmenti, bir önceki segmentin pozisyonuna taşıyoruz.
+       # We move every segment to the last segment position.
        for seg_num in range(len(self.segments) - 1, 0, -1):
            new_x = self.segments[seg_num - 1].xcor()
            new_y = self.segments[seg_num - 1].ycor()
@@ -99,7 +99,7 @@ class Snake:
 
 
 
-# Ekran ayarlarını yapalım.
+# We arrange the screen.
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("pink")
@@ -107,10 +107,10 @@ screen.title("My Snake Game")
 screen.tracer(0)
 snake=Snake()
 food=Food()
-scoreboard = Scoreboard()  # Ekran güncellemelerini manuel olarak yapabilmek için tracer'ı kapatıyoruz.
+scoreboard = Scoreboard()  # We turn off the tracer here.
 
 
-# Yılanı oluşturuyoruz.
+# Time to make the snake.
 screen.listen()
 screen.onkey(snake.up,"Up")
 screen.onkey(snake.down,"Down")
